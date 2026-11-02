@@ -92,6 +92,16 @@ Il foglio `html5/style.css` è allineato al tema del sito originale:
 
 ---
 
+## Responsive
+
+Tutte le pagine sono **responsive** e verificate a **390 / 768 / 1280 px**
+senza scroll orizzontale. Le tabelle larghe (tabella dei premi, tabella dei
+moduli) scorrono orizzontalmente all'interno del proprio contenitore, senza
+rompere il layout della pagina. Gli screenshot mobile sono in
+`html5/screenshots/mobile-*.png`.
+
+---
+
 ## Note tecniche sulla ricostruzione
 
 Le APK sono state prodotte con **MIT App Inventor** (package
