@@ -5,10 +5,24 @@ Conversione in **HTML5** delle app Android del progetto **BetOnMath**
 Android. Le app girano oggi in qualsiasi browser, su computer e smartphone,
 senza installazione.
 
-> Conversione realizzata a partire dalle APK originali, con l'autorizzazione dei
-> gestori del sito BetOnMath.
+**Demo online:** <https://coachgodzup.github.io/betonmath-simulatori-html5/>
+**Repository:** <https://github.com/CoachGodzup/betonmath-simulatori-html5> (pubblico)
 
-**Repository (privato):** <https://github.com/CoachGodzup/betonmath-simulatori-html5>
+## Cos'è questo progetto (reverse engineering)
+
+Questo è un progetto di **reverse engineering didattico**. Le APK Android
+originali (realizzate con MIT App Inventor) sono state decompilate per
+recuperare comportamento, testi e immagini; il tutto è stato poi
+**reimplementato da zero in HTML5**. L'obiettivo è conservare e rendere di nuovo
+fruibile un materiale didattico altrimenti inutilizzabile sulle versioni recenti
+di Android.
+
+Non è l'app ufficiale BetOnMath: è una **riproduzione fedele** a scopo
+dimostrativo, realizzata come test/esperimento. Il materiale didattico originale
+è di BetOnMath (Politecnico di Milano).
+
+> Progetto dimostrativo in fase di test. Per qualunque uso ufficiale o
+> segnalazione, contattare gli autori di BetOnMath.
 
 ---
 
@@ -43,7 +57,7 @@ App correlate sul sito:
 ```
 betonmath/
 ├── apk/                    # le 5 APK originali scaricate dal sito
-├── html5/                  # la conversione HTML5 (il risultato)
+├── docs/                  # la conversione HTML5 (il risultato)
 │   ├── index.html          # pagina indice: simulatori + moduli/schede
 │   ├── style.css           # CSS centralizzato (tutte le pagine)
 │   ├── assets/             # immagini condivise (logo, footer MOX/Polisocial/FDS)
@@ -59,7 +73,7 @@ betonmath/
 
 Ogni app è composta da `index.html` (markup), `app.js` (logica) e una cartella
 `assets/` con le immagini estratte dall'APK. **Nessun CSS o JavaScript è
-inline**: tutto lo stile è in `html5/style.css`, tutta la logica nei rispettivi
+inline**: tutto lo stile è in `docs/style.css`, tutta la logica nei rispettivi
 `app.js`.
 
 ---
@@ -82,7 +96,7 @@ anche la tabella completa dei 10 moduli con i collegamenti a slide e schede.
 
 ## Stile
 
-Il foglio `html5/style.css` è allineato al tema del sito originale:
+Il foglio `docs/style.css` è allineato al tema del sito originale:
 
 - font **Open Sans** (testo) e **Bitter** (titoli);
 - link in rosso scuro `#8b1813` sottolineati;
@@ -98,7 +112,7 @@ Tutte le pagine sono **responsive** e verificate a **390 / 768 / 1280 px**
 senza scroll orizzontale. Le tabelle larghe (tabella dei premi, tabella dei
 moduli) scorrono orizzontalmente all'interno del proprio contenitore, senza
 rompere il layout della pagina. Gli screenshot mobile sono in
-`html5/screenshots/mobile-*.png`.
+`docs/screenshots/mobile-*.png`.
 
 ---
 
@@ -133,10 +147,19 @@ codice (androguard) e leggendo costanti, componenti e immagini.
 
 ## Uso e pubblicazione
 
-Nessun server richiesto: aprire `html5/index.html` in un browser. Per la
-pubblicazione è sufficiente copiare la cartella `html5/` su un web server
+Nessun server richiesto: aprire `docs/index.html` in un browser. Per la
+pubblicazione è sufficiente copiare la cartella `docs/` su un web server
 statico; ogni app funziona anche da sola, purché si mantenga la sua cartella
 `assets/` e il riferimento a `../style.css`.
+
+---
+
+## Roadmap / TODO
+
+- **Layout mobile dedicato (priorità alta)**: il responsive regge (nessuno
+  scroll orizzontale), ma la pagina non è *pensata* per il mobile — c'è troppa
+  informazione in cima prima di arrivare al gioco. Dettagli e checklist in
+  [`TODO.md`](TODO.md).
 
 ---
 
@@ -144,5 +167,7 @@ statico; ogni app funziona anche da sola, purché si mantenga la sua cartella
 
 Materiale didattico del progetto **BetOnMath** — Politecnico di Milano
 (<https://betonmath.polimi.it/>), in collaborazione con **MOX** e **FDS**.
-Conversione HTML5 realizzata a partire dalle APK originali, con autorizzazione
-dei gestori del sito.
+Conversione HTML5 realizzata a partire dalle APK originali, a scopo dimostrativo.
+
+Conversione HTML5 e reverse engineering a cura di **Matteo Garza**
+([@CoachGodzup](https://github.com/CoachGodzup)).

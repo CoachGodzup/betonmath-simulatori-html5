@@ -115,6 +115,7 @@ main{padding:24px 0 40px}
 .site-footer{background:var(--footer-bg);padding:22px 0;text-align:center}
 .site-footer .fcred,.site-footer .fcred a{color:var(--footer-text);font-size:.8rem}
 .site-footer .fcred a{text-decoration:underline}
+.site-footer .credit{display:inline-block;margin-top:6px;font-size:.74rem;opacity:.92}
 
 /* ---------- 5. Componenti comuni ---------- */
 .intro{
