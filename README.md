@@ -8,6 +8,8 @@ senza installazione.
 > Conversione realizzata a partire dalle APK originali, con l'autorizzazione dei
 > gestori del sito BetOnMath.
 
+**Repository (privato):** <https://github.com/CoachGodzup/betonmath-simulatori-html5>
+
 ---
 
 ## Provenienza degli APK (traccia)
