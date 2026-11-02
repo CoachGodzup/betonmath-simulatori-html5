@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testa o Croce? — BetOnMath</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="app app-testacroce">
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/logo-bw.png" alt="BetOnMath"></a>
+    <div class="titleblock">
+      <h1>Testa o Croce?</h1>
+      <div class="sub">Due monete, tre giocatori &middot; simulatore HTML5</div>
+    </div>
+    <nav class="site-nav">
+      <a href="https://betonmath.polimi.it/?p=2972">Materiale</a>
+      <a class="active" href="https://betonmath.polimi.it/?cat=8">Modulo 1</a>
+      <a href="../index.html">Tutti i simulatori</a>
+    </nav>
+  </div>
+</header>
+
+<div class="lessonbar">
+  <div class="inner">
+    <span class="label">Modulo 1 &middot; Messaggi insidiosi</span>
+    <a href="https://betonmath.polimi.it/wp-content/uploads/9KcD4g9Hx9/Modulo1.pdf" target="_blank" rel="noopener">Slide (PDF)</a>
+    <a href="https://betonmath.polimi.it/?page_id=1951" target="_blank" rel="noopener">Testa o Croce (versione online)</a>
+    <a href="https://betonmath.polimi.it/?cat=8">Lezione</a>
+    <a href="https://betonmath.polimi.it/?p=2972">Materiale didattico</a>
+  </div>
+</div>
+
+<main>
+  <div class="casing">
+    <div class="inner">
+
+      <div class="intro">
+        Si lanciano <b>due monete</b>. Ogni giocatore scommette su un esito:
+        <b>2 Teste</b>, <b>2 Croci</b> oppure <b>1 Testa e 1 Croce</b>.
+        Con il passare dei lanci, le frequenze si avvicinano alle probabilità teoriche:
+        <b>25%</b>, <b>25%</b> e <b>50%</b>. Quanti pensano che i tre esiti siano equiprobabili?
+      </div>
+
+      <div class="coins">
+        <div class="coin" id="coin1"><img src="assets/testa.jpg" alt="moneta 1"></div>
+        <div class="coin" id="coin2"><img src="assets/testa.jpg" alt="moneta 2"></div>
+      </div>
+
+      <div class="players">
+        <div class="player" id="p1">
+          <span class="badge">vince</span>
+          <input class="pname" id="name1" value="Giocatore 1">
+          <div class="bet">scommette su 2 Croci</div>
+          <div class="count" id="count1">0</div>
+          <div class="pct" id="pct1">0% &middot; 0 lanci</div>
+        </div>
+        <div class="player" id="p2">
+          <span class="badge">vince</span>
+          <input class="pname" id="name2" value="Giocatore 2">
+          <div class="bet">scommette su 2 Teste</div>
+          <div class="count" id="count2">0</div>
+          <div class="pct" id="pct2">0% &middot; 0 lanci</div>
+        </div>
+        <div class="player" id="p3">
+          <span class="badge">vince</span>
+          <input class="pname" id="name3" value="Giocatore 3">
+          <div class="bet">scommette su 1 Testa e 1 Croce</div>
+          <div class="count" id="count3">0</div>
+          <div class="pct" id="pct3">0% &middot; 0 lanci</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="btnOne">Lancia una volta</button>
+        <div class="nbox">N = <input id="nval" type="number" min="1" value="100"></div>
+        <button class="btn btn-primary" id="btnMany">Lancia N volte</button>
+        <button class="btn btn-ghost reset" id="btnReset">Azzera</button>
+      </div>
+
+      <h2 style="font-size:1.1rem;margin:26px 0 12px;color:var(--red)">Andamento delle frequenze</h2>
+      <div class="charts">
+        <div class="chartcard">
+          <h2>Percentuale di vittorie</h2>
+          <canvas id="chartLine" width="480" height="220"></canvas>
+        </div>
+        <div class="chartcard">
+          <h2>Confronto con la teoria</h2>
+          <canvas id="chartBar" width="480" height="220"></canvas>
+        </div>
+      </div>
+      <div class="legend">
+        <span><i class="dot" style="background:#b23b36"></i>2 Croci (25%)</span>
+        <span><i class="dot" style="background:#2f7d5b"></i>2 Teste (25%)</span>
+        <span><i class="dot" style="background:#3f6fb5"></i>1 Testa e 1 Croce (50%)</span>
+      </div>
+
+      <p class="note">
+        <b>Nota didattica.</b> L'esito "1 Testa e 1 Croce" ha probabilità 1/2
+        (due combinazioni su quattro: TC e CT), mentre "2 Teste" e "2 Croci" hanno
+        probabilità 1/4 ciascuno. È un classico esempio di <b>misconcetto</b>: i tre
+        esiti <i>non</i> sono equiprobabili.
+      </p>
+
+    </div>
+  </div>
+</main>
+
+<div class="bottom">
+  <div class="container bottom-grid">
+    <div class="botwid">
+      <div class="k">Sostenuto da:</div>
+      <img src="../assets/polisocial.png" alt="Premiazione Polisocial Award">
+    </div>
+    <div class="botwid"></div>
+    <div class="botwid">
+      <div class="k">In collaborazione con:</div>
+      <a href="http://mox.polimi.it" target="_blank" rel="noopener"><img src="../assets/logo_mox.png" alt="MOX — Politecnico di Milano"></a>
+    </div>
+    <div class="botwid">
+      <a href="http://fds.mate.polimi.it" target="_blank" rel="noopener"><img src="../assets/logo_fds.gif" alt="FDS"></a>
+    </div>
+  </div>
+</div>
+<div class="site-footer">
+  <div class="container">
+    <div class="fcred">Copyright &copy; 2026 <a href="https://betonmath.polimi.it">BetOnMath</a> | <a href="https://betonmath.polimi.it/?page_id=3420">Cookie Policy</a></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

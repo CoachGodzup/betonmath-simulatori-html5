@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gioco Equo — BetOnMath</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="app app-giocoequo">
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/logo-bw.png" alt="BetOnMath"></a>
+    <div class="titleblock">
+      <h1>Gioco Equo</h1>
+      <div class="sub">Due dadi, una tabella di premi &middot; simulatore HTML5</div>
+    </div>
+    <nav class="site-nav">
+      <a href="https://betonmath.polimi.it/?p=2972">Materiale</a>
+      <a class="active" href="https://betonmath.polimi.it/?cat=13">Modulo 5</a>
+      <a href="../index.html">Tutti i simulatori</a>
+    </nav>
+  </div>
+</header>
+
+<div class="lessonbar">
+  <div class="inner">
+    <span class="label">Modulo 5 &middot; Gioco equo</span>
+    <a href="https://betonmath.polimi.it/wp-content/uploads/9KcD4g9Hx9/Modulo5.pdf" target="_blank" rel="noopener">Slide (PDF)</a>
+    <a href="https://betonmath.polimi.it/wp-content/uploads/9KcD4g9Hx9/scheda_gruppo_3.pdf" target="_blank" rel="noopener">Scheda di gruppo (PDF)</a>
+    <a href="https://betonmath.polimi.it/?cat=13">Lezione</a>
+    <a href="https://betonmath.polimi.it/?p=2972">Materiale didattico</a>
+  </div>
+</div>
+
+<main>
+  <div class="casing">
+    <div class="inner">
+
+      <div class="intro">
+        Si lanciano <b>due dadi</b>. Ogni giocata costa <b>1 €</b> e si riceve il premio
+        corrispondente alla somma uscita. Modifica i premi in tabella: il gioco è <b>equo</b>
+        quando il valore atteso dei premi (Σ premio × probabilità) eguaglia il costo.
+        L'<b>equità stimata</b> dalla simulazione si avvicina all'<b>equità teorica</b>.
+      </div>
+
+      <div class="top">
+        <div class="dicebox">
+          <div class="dice">
+            <div class="die" id="die1"><img src="assets/1.png" alt="dado 1"></div>
+            <div class="die" id="die2"><img src="assets/1.png" alt="dado 2"></div>
+          </div>
+          <div class="sumline">Somma: <b id="sum">2</b> &nbsp;·&nbsp; <span id="cat">2 o 12</span></div>
+        </div>
+        <div class="cards">
+          <div class="cc"><div class="k">Totale premi</div><div class="v" id="totPremi">0 €</div></div>
+          <div class="cc"><div class="k">Totale spesa</div><div class="v" id="totSpesa">0 €</div></div>
+          <div class="cc"><div class="k">Equità stimata</div><div class="v" id="eqStimata">—</div></div>
+          <div class="cc"><div class="k">Equità teorica</div><div class="v" id="eqTeorica">—</div></div>
+        </div>
+      </div>
+
+      <h2 style="font-size:1.05rem;color:var(--red);margin:22px 0 4px">Tabella dei premi</h2>
+      <table class="data">
+        <thead><tr>
+          <th>Somma</th><th>Combinazioni</th><th>Probabilità</th>
+          <th style="text-align:right">Premio (€)</th><th style="text-align:right">Contributo (€)</th>
+          <th style="text-align:right">Vittorie</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+        <tfoot><tr>
+          <td colspan="2">Totale</td>
+          <td class="num" id="totProb">100%</td>
+          <td></td>
+          <td class="num" id="totContrib">—</td>
+          <td class="num" id="totWin">0</td>
+        </tr></tfoot>
+      </table>
+      <div style="display:flex;gap:12px;align-items:center;margin-top:10px;flex-wrap:wrap">
+        <div class="nbox">Costo giocata (€) = <input id="cost" type="number" min="0.01" step="0.25" value="1"></div>
+        <button class="btn btn-ghost" id="btnFair">Rendi equo</button>
+        <span class="pill" id="fairHint"></span>
+      </div>
+
+      <div class="controls">
+        <div class="nbox">N = <input id="nval" type="number" min="1" value="100"></div>
+        <button class="btn btn-primary" id="btnMany">Lancia i dadi N volte</button>
+        <button class="btn btn-ghost reset" id="btnReset">Azzera</button>
+      </div>
+
+      <div class="chartcard">
+        <h2>Equità stimata nel tempo</h2>
+        <canvas id="chart" width="900" height="260"></canvas>
+      </div>
+
+      <p class="note">
+        <b>Nota didattica.</b> Un gioco è equo quando <b>Σ (premio × probabilità) = costo</b>.
+        Con due dadi le probabilità dipendono dalle combinazioni: il 7 esce in 6 modi su 36,
+        il "2 o 12" in 2 modi su 36. Per renderlo equo bisogna dare premi più alti agli esiti
+        più rari; il pulsante «Rendi equo» scala tutti i premi in modo che il valore atteso
+        torni uguale al costo.
+      </p>
+
+    </div>
+  </div>
+</main>
+
+<div class="bottom">
+  <div class="container bottom-grid">
+    <div class="botwid">
+      <div class="k">Sostenuto da:</div>
+      <img src="../assets/polisocial.png" alt="Premiazione Polisocial Award">
+    </div>
+    <div class="botwid"></div>
+    <div class="botwid">
+      <div class="k">In collaborazione con:</div>
+      <a href="http://mox.polimi.it" target="_blank" rel="noopener"><img src="../assets/logo_mox.png" alt="MOX — Politecnico di Milano"></a>
+    </div>
+    <div class="botwid">
+      <a href="http://fds.mate.polimi.it" target="_blank" rel="noopener"><img src="../assets/logo_fds.gif" alt="FDS"></a>
+    </div>
+  </div>
+</div>
+<div class="site-footer">
+  <div class="container">
+    <div class="fcred">Copyright &copy; 2026 <a href="https://betonmath.polimi.it">BetOnMath</a> | <a href="https://betonmath.polimi.it/?page_id=3420">Cookie Policy</a></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

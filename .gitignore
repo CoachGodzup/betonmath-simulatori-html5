@@ -1,0 +1,12 @@
+# Ambiente e strumenti locali (non fanno parte del progetto)
+.venv/
+work/
+.orig/
+
+# Sistema
+.DS_Store
+*.swp
+
+# Archivi locali (snapshot fuori dal repo)
+Betonmath-apk-convertite.zip
+*.zip

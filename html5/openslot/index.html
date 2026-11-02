@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Slot — BetOnMath</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="app app-openslot">
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/logo-bw.png" alt="BetOnMath"></a>
+    <div class="titleblock">
+      <h1>Open Slot</h1>
+      <div class="sub">Tre rulli, un simbolo d'oro &middot; simulatore HTML5</div>
+    </div>
+    <nav class="site-nav">
+      <a href="https://betonmath.polimi.it/?p=2972">Materiale</a>
+      <a class="active" href="https://betonmath.polimi.it/?cat=12">Modulo 6</a>
+      <a href="../index.html">Tutti i simulatori</a>
+    </nav>
+  </div>
+</header>
+
+<div class="lessonbar">
+  <div class="inner">
+    <span class="label">Modulo 6 &middot; Combinatoria I</span>
+    <a href="https://betonmath.polimi.it/wp-content/uploads/9KcD4g9Hx9/Modulo6.pdf" target="_blank" rel="noopener">Slide (PDF)</a>
+    <a href="https://betonmath.polimi.it/wp-content/uploads/9KcD4g9Hx9/scheda_gruppo_4.pdf" target="_blank" rel="noopener">Scheda di gruppo (PDF)</a>
+    <a href="https://betonmath.polimi.it/?cat=12">Lezione</a>
+    <a href="https://betonmath.polimi.it/?p=2972">Materiale didattico</a>
+  </div>
+</div>
+
+<main>
+  <div class="casing">
+    <div class="inner">
+
+      <div class="intro">
+        Una slot con <b>tre rulli</b>. Ogni rullo ha una probabilità su nove di mostrare il
+        <b>lingotto d'oro</b>. Ogni giocata costa <b>1 €</b>. I premi sono: un lingotto = 1 €,
+        due lingotti = 10 €, tre lingotti = 100 €. Il ritorno atteso è di circa <b>73%</b>:
+        a lungo andare si perde.
+      </div>
+
+      <div class="machine">
+        <div class="reels">
+          <div class="reel" id="reel1"><img src="assets/gold-64.png" alt="rullo 1"></div>
+          <div class="reel" id="reel2"><img src="assets/gold-64.png" alt="rullo 2"></div>
+          <div class="reel" id="reel3"><img src="assets/gold-64.png" alt="rullo 3"></div>
+        </div>
+        <div class="reelslabel">Il <b>lingotto</b> è il simbolo vincente</div>
+        <div class="msg lose" id="msg">Premi «Gioca» per iniziare</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat spesi"><div class="k">Spesi</div><div class="v" id="spesi">0 €</div></div>
+        <div class="stat premi"><div class="k">Premi</div><div class="v" id="premi">0 €</div></div>
+        <div class="stat saldo"><div class="k">Saldo</div><div class="v" id="saldo">0 €</div></div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="btnPlay">Gioca</button>
+        <div class="nbox">N = <input id="nval" type="number" min="1" value="100"></div>
+        <button class="btn btn-primary" id="btnMany">Gioca N volte</button>
+        <button class="btn btn-ghost reset" id="btnReset">Azzera</button>
+      </div>
+
+      <div class="chartcard">
+        <h2>Saldo nel tempo (premi − spese)</h2>
+        <canvas id="chart" width="900" height="240"></canvas>
+        <div class="rtp">Ritorno atteso teorico: <b id="rtp">≈ 73%</b> &nbsp;·&nbsp; ogni 1 € giocato se ne recuperano in media ≈ 0,73 €.</div>
+      </div>
+
+      <p class="note">
+        <b>Nota didattica.</b> Con tre rulli da 9 posizioni e un solo lingotto per rullo,
+        le probabilità sono: nessun lingotto (8/9)³ ≈ 70%, un lingotto ≈ 26%, due lingotti ≈ 3,3%,
+        tre lingotti ≈ 0,14%. Il valore atteso dei premi è 1·P(1)+10·P(2)+100·P(3) ≈ 0,73 €
+        per ogni euro speso: la casa trattiene circa il <b>27%</b>.
+      </p>
+
+    </div>
+  </div>
+</main>
+
+<div class="bottom">
+  <div class="container bottom-grid">
+    <div class="botwid">
+      <div class="k">Sostenuto da:</div>
+      <img src="../assets/polisocial.png" alt="Premiazione Polisocial Award">
+    </div>
+    <div class="botwid"></div>
+    <div class="botwid">
+      <div class="k">In collaborazione con:</div>
+      <a href="http://mox.polimi.it" target="_blank" rel="noopener"><img src="../assets/logo_mox.png" alt="MOX — Politecnico di Milano"></a>
+    </div>
+    <div class="botwid">
+      <a href="http://fds.mate.polimi.it" target="_blank" rel="noopener"><img src="../assets/logo_fds.gif" alt="FDS"></a>
+    </div>
+  </div>
+</div>
+<div class="site-footer">
+  <div class="container">
+    <div class="fcred">Copyright &copy; 2026 <a href="https://betonmath.polimi.it">BetOnMath</a> | <a href="https://betonmath.polimi.it/?page_id=3420">Cookie Policy</a></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legge dei Grandi Numeri — BetOnMath</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="app app-grandinumeri">
+
+<header class="site-head">
+  <div class="inner">
+    <a class="brand" href="../index.html"><img class="logo" src="../assets/logo-bw.png" alt="BetOnMath"></a>
+    <div class="titleblock">
+      <h1>Legge dei Grandi Numeri</h1>
+      <div class="sub">Una moneta lanciata molte volte &middot; simulatore HTML5</div>
+    </div>
+    <nav class="site-nav">
+      <a href="https://betonmath.polimi.it/?p=2972">Materiale</a>
+      <a class="active" href="https://betonmath.polimi.it/?cat=17">Modulo 10</a>
+      <a href="../index.html">Tutti i simulatori</a>
+    </nav>
+  </div>
+</header>
+
+<div class="lessonbar">
+  <div class="inner">
+    <span class="label">Modulo 10 &middot; Misconcetti matematici</span>
+    <a href="https://betonmath.polimi.it/wp-content/uploads/9KcD4g9Hx9/Modulo10.pdf" target="_blank" rel="noopener">Slide (PDF)</a>
+    <a href="https://betonmath.polimi.it/?cat=17">Lezione</a>
+    <a href="https://betonmath.polimi.it/?p=2972">Materiale didattico</a>
+  </div>
+</div>
+
+<main>
+  <div class="casing">
+    <div class="inner">
+
+      <div class="intro">
+        Si lancia <b>una moneta</b> molte volte. All'aumentare dei lanci, la
+        <b>frequenza relativa</b> delle teste si avvicina a <b>50%</b> e la
+        <b>differenza</b> tra teste e croci cresce, ma molto più lentamente del numero
+        dei lanci: il rapporto tende a zero. È la <b>legge dei grandi numeri</b>.
+      </div>
+
+      <div class="coinwrap"><div class="coin" id="coin"><img src="assets/testa.jpg" alt="moneta"></div></div>
+
+      <div class="stats">
+        <div class="stat"><div class="k">Lanci</div><div class="v" id="total">0</div></div>
+        <div class="stat green"><div class="k">Teste</div><div class="v" id="teste">0</div><small id="pt">0%</small></div>
+        <div class="stat blue"><div class="k">Croci</div><div class="v" id="croci">0</div><small id="pc">0%</small></div>
+        <div class="stat"><div class="k">% Teste</div><div class="v" id="ptbig">—</div></div>
+        <div class="stat"><div class="k">Differenza (T−C)</div><div class="v" id="diff">0</div></div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="btnOne">Lancia 1 volta</button>
+        <div class="nbox">N = <input id="nval" type="number" min="1" value="1000"></div>
+        <button class="btn btn-primary" id="btnMany">Lancia N volte</button>
+        <button class="btn btn-toggle active" id="btnFreq">Frequenza</button>
+        <button class="btn btn-toggle" id="btnDiff">Differenza</button>
+        <button class="btn btn-ghost reset" id="btnReset">Azzera</button>
+      </div>
+
+      <div class="chartcard">
+        <h2 id="chartTitle">Frequenza delle teste</h2>
+        <p class="hint" id="chartHint">Percentuale di teste sul totale dei lanci: converge verso il 50%.</p>
+        <canvas id="chart" class="bigchart" width="900" height="300"></canvas>
+      </div>
+
+      <p class="note">
+        <b>Nota didattica.</b> La frequenza relativa tende alla probabilità teorica
+        (50%), ma la <b>differenza assoluta</b> tra teste e croci non si annulla: cresce
+        come la radice del numero di lanci. Per questo "recuperare" le perdite
+        giocando ancora è un'illusione (la cosiddetta <i>fallacia del giocatore</i>).
+      </p>
+
+    </div>
+  </div>
+</main>
+
+<div class="bottom">
+  <div class="container bottom-grid">
+    <div class="botwid">
+      <div class="k">Sostenuto da:</div>
+      <img src="../assets/polisocial.png" alt="Premiazione Polisocial Award">
+    </div>
+    <div class="botwid"></div>
+    <div class="botwid">
+      <div class="k">In collaborazione con:</div>
+      <a href="http://mox.polimi.it" target="_blank" rel="noopener"><img src="../assets/logo_mox.png" alt="MOX — Politecnico di Milano"></a>
+    </div>
+    <div class="botwid">
+      <a href="http://fds.mate.polimi.it" target="_blank" rel="noopener"><img src="../assets/logo_fds.gif" alt="FDS"></a>
+    </div>
+  </div>
+</div>
+<div class="site-footer">
+  <div class="container">
+    <div class="fcred">Copyright &copy; 2026 <a href="https://betonmath.polimi.it">BetOnMath</a> | <a href="https://betonmath.polimi.it/?page_id=3420">Cookie Policy</a></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
